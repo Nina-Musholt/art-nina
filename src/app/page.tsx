@@ -67,9 +67,11 @@ export default function Gallery() {
             onClick={() => setCurrentIndex(index)}
           >
             {art.image && (
-              <img
+              <Image
                 src={urlFor(art.image).width(200).height(300).url()}
                 alt={art.title}
+                width={200}
+                height={300}
                 className="w-full h-110 object-contain bg-white"
               />
             )}
