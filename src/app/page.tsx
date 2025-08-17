@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import Image from "next/image";
 
 // Define the Artwork type
 type Artwork = {
@@ -102,9 +103,11 @@ export default function Gallery() {
 
       {/* Image */}
       {artworks[currentIndex].image ? (
-        <img
+        <Image
           src={urlFor(artworks[currentIndex].image).width(1000).url()}
           alt={artworks[currentIndex].title}
+          width={1000}
+          height={800}
           className="w-full max-h-[70vh] object-contain mx-auto"
         />
         ) : (
