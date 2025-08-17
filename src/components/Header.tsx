@@ -18,20 +18,25 @@ export default async function Header() {
   return (
     <header className="flex flex-col items-center p-0    shadow bg-white sticky top-0 z-50">
       {/* Logo */}
+      
       {logo?.image && (
         <Link href="/">
           <Image
+          
             src={urlFor(logo.image).width(800).url()}
             alt={logo.title || "Logo"}
             width={800}
             height={400}
+            
           />
         </Link>
+        
       )}
       {/* Navigation */}
     <nav className="flex flex-col sm:flex-row items-center p-4 gap-4 sm:gap-10 text-base sm:text-lg font-medium">
       {/*<Link href="/" className="hover:text-blue-600">Home</Link> */}
       {/*<Link href="/gallery" className="hover:text-blue-600">Gallery</Link> */}{/* NEW */}
+      
       <Link href="/about" className="hover:text-blue-600">About Me</Link>
       <Link href="/contact" className="hover:text-blue-600">Contact Me</Link>
     </nav>
