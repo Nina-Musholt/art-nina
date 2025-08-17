@@ -1,4 +1,4 @@
-import {UserIcon} from '@sanity/icons'
+
 import {defineType} from 'sanity'
 
 export const logo = defineType({
