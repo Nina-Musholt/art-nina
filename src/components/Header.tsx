@@ -20,7 +20,7 @@ export default async function Header() {
       {/* Logo */}
       {logo?.image && (
         <Link href="/">
-          <img
+          <Image
             src={urlFor(logo.image).width(800).url()}
             alt={logo.title || "Logo"}
             width={800}
