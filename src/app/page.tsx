@@ -104,7 +104,7 @@ export default function Gallery() {
       </h2>
 
       {/* Image */}
-      {artworks[currentIndex].image ? (
+      {artworks[currentIndex]?.image ? (
         <Image
           src={urlFor(artworks[currentIndex].image).width(1000).url()}
           alt={artworks[currentIndex].title}
