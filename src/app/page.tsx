@@ -4,13 +4,21 @@ import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
+// Define the Artwork type
+type Artwork = {
+  _id: string;
+  title: string;
+  description?: string;
+  image?: any; // can later refine with proper Sanity Image type
+};
+
 async function getArtworks() {
   const query = '*[_type == "artwork"]{ _id, title, description, image }';
   return await client.fetch(query);
 }
 
 export default function Gallery() {
-  const [artworks, setArtworks] = useState<any[]>([]);
+  const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
   // Load artworks from Sanity
@@ -68,8 +76,7 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* Modal / Lightbox */}
-      {/* Modal / Lightbox */}
+   {/* Modal / Lightbox */}
 {currentIndex !== null && (
   <div
     className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-2"
