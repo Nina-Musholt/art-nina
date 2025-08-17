@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -67,6 +68,7 @@ export default function Gallery() {
             onClick={() => setCurrentIndex(index)}
           >
             {art?.image && (
+              <Link href="/">
               <Image
                 src={urlFor(art.image).width(200).height(300).url()}
                 alt={art.title}
@@ -74,6 +76,7 @@ export default function Gallery() {
                 height={300}
                 className="w-full h-110 object-contain bg-white"
               />
+              </Link>
             )}
             {/*<div className="p-2 text-center">{art.title}</div>*/}
           </div>

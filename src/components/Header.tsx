@@ -21,10 +21,10 @@ export default async function Header() {
       {logo?.image && (
         <Link href="/">
           <img
-            src={urlFor(logo.image).width(1200).url()}
+            src={urlFor(logo.image).width(800).url()}
             alt={logo.title || "Logo"}
-            width={1000}
-            height={425}
+            width={800}
+            height={400}
           />
         </Link>
       )}
