@@ -66,7 +66,7 @@ export default function Gallery() {
             className="shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden bg-white cursor-pointer"
             onClick={() => setCurrentIndex(index)}
           >
-            {art.image && (
+            {art?.image && (
               <Image
                 src={urlFor(art.image).width(200).height(300).url()}
                 alt={art.title}
@@ -106,10 +106,10 @@ export default function Gallery() {
       {/* Image */}
       {artworks[currentIndex]?.image ? (
         <Image
-          src={urlFor(artworks[currentIndex].image).width(1000).url()}
+          src={urlFor(artworks[currentIndex].image).width(1200).url()}
           alt={artworks[currentIndex].title}
-          width={1000}
-          height={500}
+          width={1200}
+          height={1800}
           className="w-full max-h-[70vh] object-contain mx-auto"
         />
         ) : (
