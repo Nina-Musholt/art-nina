@@ -109,7 +109,7 @@ export default function Gallery() {
           src={urlFor(artworks[currentIndex].image).width(1000).url()}
           alt={artworks[currentIndex].title}
           width={1000}
-          height={800}
+          height={500}
           className="w-full max-h-[70vh] object-contain mx-auto"
         />
         ) : (

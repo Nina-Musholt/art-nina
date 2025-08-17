@@ -24,7 +24,7 @@ export default async function Header() {
             src={urlFor(logo.image).width(1200).url()}
             alt={logo.title || "Logo"}
             width={1000}
-            height={500}
+            height={425}
           />
         </Link>
       )}
