@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // Define the Artwork type
 type Artwork = {
   _id: string;
   title: string;
   description?: string;
-  image?: any; // can later refine with proper Sanity Image type
+  image?: SanityImageSource; // can later refine with proper Sanity Image type
 };
 
 async function getArtworks() {
@@ -100,11 +101,15 @@ export default function Gallery() {
       </h2>
 
       {/* Image */}
-      <img
-        src={urlFor(artworks[currentIndex].image).width(1000).url()}
-        alt={artworks[currentIndex].title}
-        className="w-full max-h-[70vh] object-contain mx-auto"
-      />
+      {artworks[currentIndex].image ? (
+        <img
+          src={urlFor(artworks[currentIndex].image).width(1000).url()}
+          alt={artworks[currentIndex].title}
+          className="w-full max-h-[70vh] object-contain mx-auto"
+        />
+        ) : (
+        <p className="text-gray-400 italic">No image available</p>
+      )}
 
       {/* Description */}
       <p className="text-gray-200 text-sm sm:text-base mt-3 px-2">
